@@ -1,5 +1,4 @@
 import clone from "clone"
-import uslug from "uslug"
 import Token from "markdown-it/lib/token"
 
 const TOC = "@[toc]"
@@ -12,7 +11,7 @@ let tocHtml = ""
 const repeat = (string, num) => new Array(num + 1).join(string)
 
 const makeSafe = (string, headingIds) => {
-  const key = uslug(string) // slugify
+  const key = encodeURI(string) // slugify
   if (!headingIds[key]) {
     headingIds[key] = 0
   }

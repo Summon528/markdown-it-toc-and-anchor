@@ -19,8 +19,7 @@
     "!**/__tests__"
   ],
   "dependencies": {
-    "clone": "^2.1.0",
-    "uslug": "^1.0.4"
+    "clone": "^2.1.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
