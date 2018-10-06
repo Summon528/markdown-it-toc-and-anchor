@@ -1,5 +1,6 @@
 import clone from "clone"
 import Token from "markdown-it/lib/token"
+import kebabCase from "lodash.kebabcase"
 
 const TOC = "@[toc]"
 const TOC_RE = /^@\[toc\]/im
@@ -11,7 +12,7 @@ let tocHtml = ""
 const repeat = (string, num) => new Array(num + 1).join(string)
 
 const makeSafe = (string, headingIds) => {
-  const key = encodeURI(string) // slugify
+  const key = kebabCase(string) // slugify
   if (!headingIds[key]) {
     headingIds[key] = 0
   }

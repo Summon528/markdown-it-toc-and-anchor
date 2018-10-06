@@ -197,6 +197,10 @@ var _token = require("markdown-it/lib/token");
 
 var _token2 = _interopRequireDefault(_token);
 
+var _lodash = require("lodash.kebabcase");
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -213,7 +217,7 @@ var repeat = function repeat(string, num) {
 };
 
 var makeSafe = function makeSafe(string, headingIds) {
-  var key = encodeURI(string); // slugify
+  var key = (0, _lodash2.default)(string); // slugify
   if (!headingIds[key]) {
     headingIds[key] = 0;
   }
